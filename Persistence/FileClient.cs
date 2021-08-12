@@ -10,15 +10,6 @@ namespace Persistence
 {
     public class FileClient : IFileClient
     {
-        /*        private readonly string _fileName;
-
-                public FileClient(string fileName)
-                {
-                    _fileName = fileName;
-                    //File.Create(_fileName); // creation of a file is illegal
-                    File.AppendAllLines(_fileName, new string[0]); // also illegal :)
-                }*/
-
         public IEnumerable<T> ReadAll<T>(string fileName)
         {
             var jsonItems = File.ReadAllLines(fileName);

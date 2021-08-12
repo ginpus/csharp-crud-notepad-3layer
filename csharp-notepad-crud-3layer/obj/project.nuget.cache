@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "2ua4lJwSIc/2YK7mo+UqmjmvaUCVkljjxl3c3liPbp156WZvhTh/M3qno0sVaxB0mIV4Uyea3BdsWmXSCaPlOg==",
+  "dgSpecHash": "7FkFsCXviKK8xwLmyPDil7ctHNHG8rO6MXuUSIQmJzYjCPNb2um/+ulZ8q3NyEbY/TrqPFVaDX8pzpq06V7SAw==",
   "success": true,
   "projectFilePath": "F:\\Desktop\\dotNET\\C#\\8.3\\csharp-notepad-crud-3layer\\NotesApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ginta\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
+    "C:\\Users\\ginta\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

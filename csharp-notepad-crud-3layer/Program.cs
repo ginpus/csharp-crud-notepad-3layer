@@ -5,6 +5,7 @@ using Domain.Services;
 using Persistence; // imported as an externally referenced project (via dependencies of main app NotesApp)
 using Persistence.Models;
 using Persistence.Repositories;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace csharp_notepad_crud_3layer
 {
@@ -12,13 +13,21 @@ namespace csharp_notepad_crud_3layer
     {
         private static void Main(string[] args)
         {
-            var fileClient = new FileClient();
+            /*            var fileClient = new FileClient();
 
-            var notesRepository = new NotesRepository(fileClient);
+                        var notesRepository = new NotesRepository(fileClient);
 
-            var notesService = new NotesService(notesRepository);
+                        var notesService = new NotesService(notesRepository);
 
-            var noteApp = new NoteApp(notesService);
+                        var noteApp = new NoteApp(notesService);*/
+
+            //replaces above method with dependency injection
+
+            var startup = new Startup();
+
+            var serviceProvider = startup.ConfigureServices();
+
+            var noteApp = serviceProvider.GetService<NoteApp>();
 
             noteApp.Start();
 

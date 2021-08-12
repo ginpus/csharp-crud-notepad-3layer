@@ -42,6 +42,7 @@ namespace Domain.Services
             {
                 throw new Exception("Note is invalid!");
             }
+
             _notesRepository.Save(note);
         }
 
