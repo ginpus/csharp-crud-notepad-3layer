@@ -13,7 +13,7 @@ namespace Domain.Services
         private readonly INotesRepository _notesRepository;
         private readonly List<string> _swearWords;
 
-        public NotesService(NotesRepository notesRepository)
+        public NotesService(INotesRepository notesRepository)
         {
             _notesRepository = notesRepository;
             _swearWords = new List<string>

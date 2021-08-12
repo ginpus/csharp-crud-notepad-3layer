@@ -19,6 +19,8 @@ namespace csharp_notepad_crud_3layer
             _notesService = notesService;
         }
 
+        public NoteApp() { }
+
         public void Start()
         {
             string text;

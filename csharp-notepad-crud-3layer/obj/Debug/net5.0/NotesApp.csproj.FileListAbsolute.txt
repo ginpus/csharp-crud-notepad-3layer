@@ -19,3 +19,5 @@ F:\Desktop\dotNET\C#\8.3\csharp-notepad-crud-3layer\obj\Debug\net5.0\NotesApp.pd
 F:\Desktop\dotNET\C#\8.3\csharp-notepad-crud-3layer\obj\Debug\net5.0\NotesApp.genruntimeconfig.cache
 F:\Desktop\dotNET\C#\8.3\csharp-notepad-crud-3layer\bin\Debug\net5.0\Domain.dll
 F:\Desktop\dotNET\C#\8.3\csharp-notepad-crud-3layer\bin\Debug\net5.0\Domain.pdb
+F:\Desktop\dotNET\C#\8.3\csharp-notepad-crud-3layer\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+F:\Desktop\dotNET\C#\8.3\csharp-notepad-crud-3layer\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll

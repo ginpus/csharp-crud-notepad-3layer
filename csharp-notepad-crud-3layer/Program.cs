@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Domain;
 using Domain.Services;
 using Persistence; // imported as an externally referenced project (via dependencies of main app NotesApp)
 using Persistence.Models;
@@ -11,7 +12,7 @@ namespace csharp_notepad_crud_3layer
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        public static void Main(string[] args)
         {
             /*            var fileClient = new FileClient();
 
