@@ -28,10 +28,12 @@ namespace Domain.Services
 
         public IEnumerable<Note> GetAll()
         {
-            var allNotes = _notesRepository.GetAll();
-            var validNotes = allNotes.Where(note => note.Text.Length >= 10);
+            return _notesRepository.GetAll();
 
-            return validNotes;
+            /*            var allNotes = _notesRepository.GetAll();
+                        var validNotes = allNotes.Where(note => note.Text.Length >= 1);
+
+                        return validNotes;*/
         }
 
         public void Create(Note note)
@@ -45,17 +47,17 @@ namespace Domain.Services
 
         public void Edit(int id, string title, string text)
         {
-            throw new NotImplementedException();
+            _notesRepository.Edit(id, title, text);
         }
 
         public void DeleteById(int id)
         {
-            throw new NotImplementedException();
+            _notesRepository.Delete(id);
         }
 
         public void ClearAll()
         {
-            throw new NotImplementedException();
+            _notesRepository.DeleteAll();
         }
     }
 }

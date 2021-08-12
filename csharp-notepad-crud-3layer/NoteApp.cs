@@ -23,6 +23,7 @@ namespace csharp_notepad_crud_3layer
         {
             string text;
             string title;
+            int id;
 
             while (true)
             {
@@ -38,8 +39,11 @@ namespace csharp_notepad_crud_3layer
                 switch (chosenCommand)
                 {
                     case "1":
-                        // show all notes
-
+                        _notesService.GetAll();
+                        foreach (var note in _notesService.GetAll())
+                        {
+                            Console.WriteLine(note.ToString());
+                        }
                         break;
 
                     case "2":
@@ -59,20 +63,22 @@ namespace csharp_notepad_crud_3layer
 
                     case "3":
                         Console.WriteLine("Enter note ID");
+                        id = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Enter new note Title");
                         title = (Console.ReadLine());
                         Console.WriteLine("Enter new note Text");
                         text = (Console.ReadLine());
-                        // Edit note
+                        _notesService.Edit(id, title, text);
                         break;
 
                     case "4":
                         Console.WriteLine("Enter note ID:");
-                        // Delete note
+                        id = Convert.ToInt32(Console.ReadLine());
+                        _notesService.DeleteById(id);
                         break;
 
                     case "5":
-                        // Delete all notes
+                        _notesService.ClearAll();
                         break;
 
                     case "6":
