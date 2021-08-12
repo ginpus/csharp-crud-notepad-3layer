@@ -1,2 +1,3 @@
 {"Id":1,"Title":"Updated title","Text":"Updated text","DateCreated":"2021-08-11T21:31:32.0474309+03:00"}
 {"Id":2,"Title":"Second note","Text":"Text of second note","DateCreated":"2021-08-11T21:37:05.5322193+03:00"}
+{"Id":1,"Title":"Pirmas note\u0027as","Text":"Siandien treciadienis","DateCreated":"2021-08-12T11:32:17.9536264+03:00"}

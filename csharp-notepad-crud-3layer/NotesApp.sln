@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesApp", "NotesApp.csproj", "{3B148B21-FC5D-499D-9AE8-0F01E0060D54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "..\Persistence\Persistence.csproj", "{B3DC5801-F1C7-4250-9569-D42297F023C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "..\Persistence\Persistence.csproj", "{B3DC5801-F1C7-4250-9569-D42297F023C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "..\Domain\Domain.csproj", "{8929913D-2721-4E24-9035-AAFD97695DD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B3DC5801-F1C7-4250-9569-D42297F023C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3DC5801-F1C7-4250-9569-D42297F023C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3DC5801-F1C7-4250-9569-D42297F023C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8929913D-2721-4E24-9035-AAFD97695DD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8929913D-2721-4E24-9035-AAFD97695DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8929913D-2721-4E24-9035-AAFD97695DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8929913D-2721-4E24-9035-AAFD97695DD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

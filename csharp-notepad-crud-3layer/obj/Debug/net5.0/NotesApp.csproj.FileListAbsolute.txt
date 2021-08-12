@@ -17,3 +17,5 @@ F:\Desktop\dotNET\C#\8.3\csharp-notepad-crud-3layer\obj\Debug\net5.0\NotesApp.dl
 F:\Desktop\dotNET\C#\8.3\csharp-notepad-crud-3layer\obj\Debug\net5.0\ref\NotesApp.dll
 F:\Desktop\dotNET\C#\8.3\csharp-notepad-crud-3layer\obj\Debug\net5.0\NotesApp.pdb
 F:\Desktop\dotNET\C#\8.3\csharp-notepad-crud-3layer\obj\Debug\net5.0\NotesApp.genruntimeconfig.cache
+F:\Desktop\dotNET\C#\8.3\csharp-notepad-crud-3layer\bin\Debug\net5.0\Domain.dll
+F:\Desktop\dotNET\C#\8.3\csharp-notepad-crud-3layer\bin\Debug\net5.0\Domain.pdb

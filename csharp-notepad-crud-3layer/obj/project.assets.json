@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Persistence": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
       "Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -15,6 +28,11 @@
     }
   },
   "libraries": {
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
     "Persistence/1.0.0": {
       "type": "project",
       "path": "../Persistence/Persistence.csproj",
@@ -23,6 +41,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Domain >= 1.0.0",
       "Persistence >= 1.0.0"
     ]
   },
@@ -58,6 +77,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "F:\\Desktop\\dotNET\\C#\\8.3\\Domain\\Domain.csproj": {
+              "projectPath": "F:\\Desktop\\dotNET\\C#\\8.3\\Domain\\Domain.csproj"
+            },
             "F:\\Desktop\\dotNET\\C#\\8.3\\Persistence\\Persistence.csproj": {
               "projectPath": "F:\\Desktop\\dotNET\\C#\\8.3\\Persistence\\Persistence.csproj"
             }

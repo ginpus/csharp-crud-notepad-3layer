@@ -5,28 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Persistence.Repositories;
+using Domain.Services;
+using Persistence.Models;
 
 namespace csharp_notepad_crud_3layer
 {
     public class NoteApp
     {
-        private readonly INotesRepository _notesRepository;
+        private readonly INotesService _notesService;
 
-        public NoteApp(INotesRepository notesRepository)
+        public NoteApp(INotesService notesService)
         {
-            _notesRepository = notesRepository;
+            _notesService = notesService;
         }
 
         public void Start()
         {
             string text;
-            var title = string.Empty;
+            string title;
 
             while (true)
             {
                 Console.WriteLine("Available commands:");
                 Console.WriteLine("1 - Show all notes");
-                Console.WriteLine("2 - Save note");
+                Console.WriteLine("2 - Create note");
                 Console.WriteLine("3 - Edit note");
                 Console.WriteLine("4 - Delete note");
                 Console.WriteLine("5 - Delete all notes");
@@ -37,11 +39,7 @@ namespace csharp_notepad_crud_3layer
                 {
                     case "1":
                         // show all notes
-                        var allNotes = _notesRepository.GetAll();
-                        foreach (var note in allNotes)
-                        {
-                            Console.WriteLine(note.ToString());
-                        }
+
                         break;
 
                     case "2":
@@ -49,7 +47,13 @@ namespace csharp_notepad_crud_3layer
                         title = Console.ReadLine();
                         Console.WriteLine("Enter note Text: ");
                         text = Console.ReadLine();
-                        File.WriteAllLines("", new string[] { text });
+                        _notesService.Create(new Note
+                        {
+                            Id = 1,
+                            Title = title,
+                            Text = text,
+                            DateCreated = DateTime.Now
+                        });
                         // Create note
                         break;
 

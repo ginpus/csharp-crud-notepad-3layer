@@ -29,7 +29,7 @@ namespace Persistence.Repositories
 
         public void Edit(int id, string title, string text)
         {
-            var allNotes = _fileClient.ReadAll<Note>(FileName).ToList();
+            var allNotes = _fileClient.ReadAll<Note>(FileName).ToList(); // ToList() forces IEnumerable to be a list. Better for performance. It is neither Array nor List - it is IEnumerable by default.
             var noteToUpdate = allNotes.First(note => note.Id == id);
 
             noteToUpdate.Title = title;
@@ -41,7 +41,7 @@ namespace Persistence.Repositories
         public void Delete(int id)
         {
             var allNotes = _fileClient.ReadAll<Note>(FileName).ToList();
-            var updatedNotes = allNotes.Where(note => note.Id != id);
+            var updatedNotes = allNotes.Where(note => note.Id != id); // all notes are preserved in the list apart the one defined by the user
 
             _fileClient.WriteAll(FileName, updatedNotes);
         }

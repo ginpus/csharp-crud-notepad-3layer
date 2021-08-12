@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Domain.Services;
 using Persistence; // imported as an externally referenced project (via dependencies of main app NotesApp)
 using Persistence.Models;
 using Persistence.Repositories;
@@ -11,6 +12,16 @@ namespace csharp_notepad_crud_3layer
     {
         private static void Main(string[] args)
         {
+            var fileClient = new FileClient();
+
+            var notesRepository = new NotesRepository(fileClient);
+
+            var notesService = new NotesService(notesRepository);
+
+            var noteApp = new NoteApp(notesService);
+
+            noteApp.Start();
+
             /*
 
             fileClient.WriteAll("notes.txt", notes); // <T> type is defined according to the type of parameter (notes is of type Note, hence T = Note)
@@ -47,14 +58,6 @@ namespace csharp_notepad_crud_3layer
                 Console.WriteLine(note.Text);
                 Console.WriteLine(note.DateCreated);
             }*/
-
-            var fileClient = new FileClient();
-
-            var notesRepository = new NotesRepository(fileClient);
-
-            var noteApp = new NoteApp(notesRepository);
-
-            noteApp.Start();
         }
     }
 }
