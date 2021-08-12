@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using Persistence.Repositories;
 using Domain.Services;
-using Persistence.Models;
+using Persistence.Models; // models should be under domain (Services)
 
 namespace csharp_notepad_crud_3layer
 {
@@ -42,7 +42,7 @@ namespace csharp_notepad_crud_3layer
                         var allNotes = _notesService.GetAll();
                         foreach (var note in allNotes)
                         {
-                            Console.WriteLine(note.ToString());
+                            Console.WriteLine(note);
                         }
                         break;
 
