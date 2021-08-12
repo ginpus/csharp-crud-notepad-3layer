@@ -39,26 +39,27 @@ namespace csharp_notepad_crud_3layer
                 switch (chosenCommand)
                 {
                     case "1":
-                        _notesService.GetAll();
-                        foreach (var note in _notesService.GetAll())
+                        var allNotes = _notesService.GetAll();
+                        foreach (var note in allNotes)
                         {
                             Console.WriteLine(note.ToString());
                         }
                         break;
 
                     case "2":
+                        Console.WriteLine("Enter note ID");
+                        id = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Enter note Title:");
                         title = Console.ReadLine();
                         Console.WriteLine("Enter note Text: ");
                         text = Console.ReadLine();
                         _notesService.Create(new Note
                         {
-                            Id = 1,
+                            Id = id,
                             Title = title,
                             Text = text,
                             DateCreated = DateTime.Now
                         });
-                        // Create note
                         break;
 
                     case "3":
