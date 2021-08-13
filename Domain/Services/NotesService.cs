@@ -29,16 +29,11 @@ namespace Domain.Services
         public IEnumerable<Note> GetAll()
         {
             return _notesRepository.GetAll();
-
-            /*            var allNotes = _notesRepository.GetAll();
-                        var validNotes = allNotes.Where(note => note.Text.Length >= 1);
-
-                        return validNotes;*/
         }
 
         public void Create(Note note)
         {
-            if (_swearWords.Any(swearWord => note.Text.Contains(swearWord)))
+            if (_swearWords.Any(swearWord => note.Text.Contains(swearWord))) // some demo logic implemented
             {
                 throw new Exception("Note is invalid!");
             }
