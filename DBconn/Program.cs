@@ -26,8 +26,9 @@ namespace DBconn
 
             connection.Open();
 
-            var query = "select * from customers";
-            using var command = new MySqlCommand(query, connection);
+            var querySelect = "select * from customers";
+
+            using var command = new MySqlCommand(querySelect, connection);
 
             var reader = command.ExecuteReader();
 
@@ -56,6 +57,52 @@ namespace DBconn
             }
 
             connection.Close();
+
+            var fakeCustomers = GeneratePersons(100);
+            //var fakeCustomersQuery = new List<string>();
+
+            foreach (var fakeCustomer in fakeCustomers)
+            {
+                connection.Open();
+
+                // problem with backticked names:
+                //var quryInsertFakeCustomer = "INSERT INTO customers (first_name, last_name, email, street, city, state, age) VALUES('" + fakeCustomer.FirstName + "','" + fakeCustomer.LastName + "','" + fakeCustomer.Email + "','" + fakeCustomer.Street + "','" + fakeCustomer.City + "','" + fakeCustomer.State + "','" + fakeCustomer.Age + "');";
+
+                var quryInsertFakeCustomer = $"INSERT INTO customers (first_name, last_name, email, street, city, state, age) VALUES({fakeCustomer.CustomerToQuery()});";
+
+                using var commandInsert = new MySqlCommand(quryInsertFakeCustomer, connection);
+
+                var readerInsert = commandInsert.ExecuteReader();
+
+                while (readerInsert.Read())
+                {
+                }
+
+                Console.WriteLine(quryInsertFakeCustomer);
+
+                connection.Close();
+            }
+        }
+
+        public static IEnumerable<Customer> GeneratePersons(int customerCount)
+        {
+            var listOfCustomers = new List<Customer> { };
+            for (var i = 0; i < customerCount; i++)
+            {
+                var customer = new Customer
+                {
+                    FirstName = Faker.Name.First(),
+                    LastName = Faker.Name.Last(),
+                    Email = Faker.Internet.Email(),
+                    Street = Faker.Address.StreetAddress(),
+                    City = Faker.Address.City(),
+                    State = Faker.Address.UsState(),
+                    Age = Faker.RandomNumber.Next(1, 100)
+                };
+                //Console.WriteLine(customer);
+                listOfCustomers.Add(customer);
+            }
+            return listOfCustomers;
         }
     }
 }

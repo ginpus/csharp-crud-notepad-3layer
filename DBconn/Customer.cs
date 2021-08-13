@@ -21,5 +21,10 @@ namespace DBconn
         {
             return $"{CustomerId} {FirstName} {LastName} {Email}";
         }
+
+        public string CustomerToQuery()
+        {
+            return $"\"{FirstName}\",\"{LastName}\",\"{Email}\",\"{Street}\",\"{City}\",\"{State}\",\"{Age}\"";
+        }
     }
 }
