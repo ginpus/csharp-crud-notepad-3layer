@@ -58,8 +58,7 @@ namespace DBconn
 
             connection.Close();
 
-            var fakeCustomers = GeneratePersons(100);
-            //var fakeCustomersQuery = new List<string>();
+            var fakeCustomers = GeneratePersons(10);
 
             foreach (var fakeCustomer in fakeCustomers)
             {
